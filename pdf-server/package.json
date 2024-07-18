@@ -1,0 +1,15 @@
+{
+  "name": "pdf-server",
+  "version": "0.0.1",
+  "description": "HTML2PDF server",
+  "main": "pdf-server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sunline",
+  "license": "ISC",
+  "dependencies": {
+    "date-format": "^1.2.0",
+    "html-pdf": "^2.2.0"
+  }
+}

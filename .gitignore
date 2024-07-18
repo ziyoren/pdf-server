@@ -1,0 +1,12 @@
+pdf-server/.idea
+pdf-server/node_modules
+pdf-server/*.pdf
+
+dev-docker/node-v8.17.0-linux-x64*
+dev-docker/phantomjs-2.1.1-linux-x86_64*
+
+pdf/*
+pdf
+
+node-v8.17.0-linux-x64*
+phantomjs-2.1.1-linux-x86_64*

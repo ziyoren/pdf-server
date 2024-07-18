@@ -1,0 +1,16 @@
+{
+    "save" : "/tmp/pdf/",
+    "port" : 80,
+    "pdf" : {
+      "phantomPath": "/usr/local/phantomjs/bin/phantomjs",
+      "footer": {
+        "height": "8mm",
+        "contents": {
+          "first": "　",
+          "default": " "
+        }
+      }
+    }
+  
+  }
+  

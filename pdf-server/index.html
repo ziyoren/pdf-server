@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZIYO PDF Server</title>
+  </head>
+  <body>
+    <h1>ZIYO PDF Server</h1>
+
+    <p>
+      This is a simple nodejs script that uses the html-pdf library to convert
+      an HTML file into a PDF.
+    </p>
+
+    <h3>API</h3>
+    <div>
+      <p class="api-box api-post">
+        <span class="api-method">POST</span> /pdf
+        <span class="api-desc">Show PDF</span>
+      </p>
+      <div class="api-params">
+        <p class="api-title">
+          Parameters <span class="api-tag">x-www-form-urlencoded</span>
+        </p>
+        <table width="100%" border="0" class="api-params-table">
+          <tr class="header">
+            <td width="20%">Name</td>
+            <td width="15%">Type</td>
+            <td width="10%">Required</td>
+            <td width="40%">Description</td>
+          </tr>
+          <tr>
+            <td>html</td>
+            <td>String</td>
+            <td>yes</td>
+            <td>HTML code (including CSS)</td>
+          </tr>
+          <tr>
+            <td>filename</td>
+            <td>String</td>
+            <td>no</td>
+            <td>File name, used during download</td>
+          </tr>
+        </table>
+        <p class="api-title">Example: <a href="/html">Show PDF</a></p>
+      </div>
+
+      <p class="api-box api-post">
+        <span class="api-method">POST</span> /pdf/down
+        <span class="api-desc">Download PDF</span>
+      </p>
+      <div class="api-params">
+        <p>Please refer to <span class="api-tag">/pdf</span> for parameters</p>
+      </div>
+
+      <p class="api-box api-post">
+        <span class="api-method">POST</span> /compact-pdf
+        <span class="api-desc">Generate a PDF file</span>
+      </p>
+      <div class="api-params">
+        <p>Please refer to <span class="api-tag">/pdf</span> for parameters</p>
+        <div>
+            To facilitate file operations, please point the/tmp/pdf directory of the Docker container to the folder on the host computer.
+        </div>
+        <div class="api-tag">
+            docker run -itd --name pdf-server -p 8000:80 -v /my/work/dir:/tmp/pdf ziyo-pdf-server
+        </div>
+        <p class="api-title">Example: <a href="/test">Generate PDF</a></p>
+      </div>
+    </div>
+
+    <style>
+      p {
+        margin: 0;
+      }
+
+      table {
+        border-collapse: collapse; /* 合并边框，避免双线 */
+      }
+
+      table,
+      th,
+      td {
+        padding: 5px 10px;
+        border: 1px solid rgb(170, 170, 170); /* 设置1像素宽的实线黑色边框 */
+        border-left: none;
+        border-right: none;
+        font-weight: 300;
+      }
+      .header td {
+        font-weight: 400;
+      }
+
+      .api-box {
+        border: 2px solid #13c4ff;
+        border-radius: 5px;
+        padding: 4px;
+      }
+
+      .api-desc {
+        margin-left: 30px;
+        font-weight: 300;
+        color: #777;
+      }
+
+      .api-tag {
+        border-radius: 4px;
+        background-color: #f1f1f1;
+        padding: 4px;
+        color: #777;
+      }
+
+      .api-post:hover {
+        background-color: #bdebfa;
+      }
+
+      span.api-method {
+        color: #fff;
+        border-radius: 5px;
+        padding: 2px 8px;
+      }
+
+      .api-post span.api-method {
+        background-color: #13c4ff;
+      }
+
+      .api-get {
+        border-color: #1ad698;
+      }
+
+      .api-get:hover {
+        background-color: #c0e8db;
+      }
+
+      .api-get span.api-method {
+        background-color: #1ad698;
+      }
+
+      .api-title {
+        margin: 15px 0;
+      }
+
+      .api-params {
+        padding: 10px 20px;
+        margin-bottom: 15px;
+      }
+    </style>
+  </body>
+</html>
